@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Grace Tian">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <title>MonoMuse</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img id="logo" src="../static/logo.png" alt="MonoMuse Logo">
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="tickets.html">Buy Tickets</a>
+            <a id="navselected" href="checkout.html">Checkout</a>
+        </nav>
+    </header>
+    <div class="main">
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="quantity">Ticket Quantity:</label>
+            <input type="number" min="0" id="quantity" name="quantity" required><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2026 MonoMuse. All rights reserved.</p>
+    </footer>
+</body>
+</html>
