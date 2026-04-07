@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Grace Tian">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse Location Map">
+    <title>MonoMuse | Visit Us</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="../static/script.js" defer></script>
+</head>
+<body class="map-page" onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/logo.png" alt="MonoMuse Logo">
+        </header>
+
+        <nav class="nav_bar">
+            <button id="hamburger-menu" class="hamburger-btn" type="button">☰</button>
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="buytickets.html">Buy Tickets</a>
+            <a href="maps.html">Visit Us</a>
+        </nav>
+
+        <main class="main">
+            <h1>Plan Your Visit</h1>
+            
+            <section class="visit-info">
+                <h2>Visit Us</h2>
+                <p>MonoMuse is located in Pittsburgh, PA. Use the map below to find us and plan your visit.</p>
+                <div id="map" class="map-container"></div>
+            </section>
+
+            <section class="visit-info">
+                <h2>Location & Hours</h2>
+                <p><strong>Address:</strong> Pittsburgh, PA</p>
+                <p><strong>Hours:</strong> Check individual dates for exhibition-specific hours</p>
+                <p><strong>Contact:</strong> For more information, visit our exhibitions or buy tickets page</p>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,439 @@
+html {
+    scrollbar-gutter: stable;
+}
+
+* {
+    padding: 5px;
+    margin: 5px;
+    background: #1c1c20;
+    color: #f7f5e8;
+    box-sizing: border-box;
+
+    font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
+    font-optical-sizing: auto;
+    font-weight: 350;
+    line-height: 1.5;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+}
+
+.map-page #map,
+.map-page .map-container,
+.map-page .leaflet-container {
+    background: transparent !important;
+    color: #1c1c20 !important;
+}
+
+.map-page #map * {
+    background: transparent !important;
+    color: #1c1c20 !important;
+}
+
+.map-page .leaflet-popup-content-wrapper,
+.map-page .leaflet-popup-tip,
+.map-page .leaflet-popup-content {
+    background: rgba(255, 255, 255, 0.96) !important;
+    color: #1c1c20 !important;
+}
+
+.map-page .leaflet-control-zoom,
+.map-page .leaflet-control-zoom a,
+.map-page .leaflet-bar {
+    background: rgba(255, 255, 255, 0.96) !important;
+    color: #1c1c20 !important;
+    border: 1px solid rgba(28, 28, 32, 0.16) !important;
+}
+
+.map-page .leaflet-control-zoom a:hover {
+    background: rgba(255, 255, 255, 1) !important;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        'header'
+        'nav_bar'
+        'main'
+        'footer';
+}
+
+.header {
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_bar {
+    grid-area: nav_bar;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+#logo {
+    width: 18%;
+    min-width: 140px;
+    display: block;
+}
+
+.explore_image {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
+}
+
+nav a{
+    text-decoration: none;
+    color: #f7f5e8;
+    font-weight: 600;
+    padding: 8px 10px;
+    border: 1px solid transparent;
+    border-radius: 12px;    
+}
+
+nav a:hover {
+    border-color: #6f95a1;
+}
+
+.active {
+    color: #6f95a1;
+    border-color: #6f95a1;
+}
+
+.cta {
+    background-color: #6f95a1;
+    color: #1c1c20;
+    text-decoration: none;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-weight: 600;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.cta_secondary {
+    background-color: transparent;
+    color: #6f95a1;
+    border: 1px solid #6f95a1;
+}
+
+.intro_actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+#longIntro,
+#readLess,
+#ticketOptions {
+    display: none;
+}
+
+footer {
+    border-top: 1px solid rgba(245,245,247,.12);
+    padding: 18px 16px;
+    text-align: center;
+    color: #f7f5e8;
+}
+
+th,
+td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: fit-content;
+}
+
+.ticket_table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ticket_table th,
+.ticket_table td {
+    border-bottom: 1px solid rgba(245,245,247,.12);
+    text-align: left;
+}
+
+.ticket_card,
+.ticket_form {
+    border: 1px solid rgba(245,245,247,.12);
+    border-radius: 14px;
+    padding: 18px;
+}
+
+.ticket_form {
+    display: grid;
+    gap: 16px;
+}
+
+.ticket_form label {
+    margin-bottom: 6px;
+}
+
+.ticket_form input,
+.ticket_form select {
+    width: 100%;
+    border: 1px solid rgba(245,245,247,.18);
+    border-radius: 10px;
+    background: #1c1c20;
+    color: #f7f5e8;
+    padding: 12px 14px;
+    font: inherit;
+}
+
+.ticket_form input:focus,
+.ticket_form select:focus {
+    outline: none;
+    border-color: #6f95a1;
+    box-shadow: 0 0 0 3px rgba(111, 149, 161, 0.18);
+}
+
+.ticket_form input[type="date"] {
+    color: #f7f5e8;
+}
+
+.ticket_form input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) brightness(2);
+    cursor: pointer;
+}
+
+.checkbox_label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: auto;
+}
+
+.checkbox_label input {
+    width: auto;
+    margin: 0;
+}
+
+.order_total,
+.form-errors {
+    margin-top: 16px;
+}
+
+.order_total {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.form-errors ul {
+    margin: 10px 0 0;
+    padding-left: 18px;
+    color: #f7d1d1;
+}
+
+.form-errors li {
+    margin-bottom: 6px;
+}
+
+.order_summary {
+    margin-top: 20px;
+}
+
+.order_summary dt {
+    font-weight: 700;
+    margin-top: 12px;
+}
+
+.order_summary dd {
+    margin: 0 0 12px 0;
+}
+
+.ticket_form input,
+.ticket_form select {
+    border: 1px solid rgba(245,245,247,.18);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.ticket_meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+}
+
+form * {
+    margin: auto;
+    text-align: center;
+}
+
+.ticket_form form * {
+    margin: 6px 0;
+    text-align: left;
+}
+
+.hamburger-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #f7f5e8;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.nav_bar.responsive {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.nav_bar.responsive a {
+    text-align: center;
+    padding: 15px;
+    display: block;
+    width: 100%;
+}
+
+.map-container {
+    height: 400px;
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.museum-video {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.video-section {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.visit-info {
+    margin: 30px 0;
+    padding: 20px;
+    border: 1px solid rgba(245,245,247,.12);
+    border-radius: 10px;
+}
+
+.explore_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.explore_image_wrapper {
+    /* 自动分配第一列 */
+}
+
+.explore_mission {
+    /* 自动分配第二列 */
+}
+
+.explore_milestones_wrapper {
+    width: 100%;
+}
+
+.explore_image {
+    width: 100%;
+    max-width: 550px;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 800px) {
+    .hamburger-btn {
+        display: block;
+    }
+
+    .nav_bar {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .nav_bar a {
+        display: none;
+    }
+
+    .nav_bar.responsive {
+        flex-direction: column;
+    }
+
+    .nav_bar.responsive a {
+        display: block;
+        text-align: left;
+    }
+
+    #logo {
+        width: 30%;
+        min-width: 80px;
+    }
+
+    .header {
+        padding: 10px;
+    }
+
+    .main {
+        padding: 15px;
+    }
+
+    .explore_container {
+        grid-template-columns: 1fr;
+    }
+
+    .explore_image {
+        max-width: 100%;
+    }
+
+    .map-container {
+        height: 300px;
+    }
+
+    .museum-video {
+        max-width: 100%;
+        height: 250px;
+    }
+
+    .ticket_table {
+        font-size: 14px;
+    }
+
+    .ticket_table th,
+    .ticket_table td {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    table {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .intro_actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .intro_actions a,
+    .intro_actions button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Grace Tian">
+    <meta name="keywords" content="MonoMuse ticket confirmation">
+    <meta name="description" content="MonoMuse ticket confirmation page">
+    <title>MonoMuse | Confirmation</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" crossorigin="anonymous"></script>
+    <script src="../static/script.js" defer></script>
+</head>
+<body onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/logo.png" alt="MonoMuse Logo">
+        </header>
+
+        <nav class="nav_bar">
+            <button id="hamburger-menu" class="hamburger-btn" type="button">☰</button>
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="buytickets.html">Buy Tickets</a>
+            <a href="maps.html">Visit Us</a>
+        </nav>
+
+        <main class="main">
+            <h1>Order Confirmation</h1>
+            <section class="ticket_card">
+                <p id="confirmationMessage">Thank you for your purchase! Your tickets are confirmed.</p>
+                <dl class="order_summary">
+                    <dt>Name:</dt>
+                    <dd id="confirmName">—</dd>
+                    <dt>Visit Date:</dt>
+                    <dd id="confirmDate">—</dd>
+                    <dt>Ticket Type:</dt>
+                    <dd id="confirmType">—</dd>
+                    <dt>Quantity:</dt>
+                    <dd id="confirmQuantity">—</dd>
+                    <dt>Total Cost:</dt>
+                    <dd id="confirmTotal">—</dd>
+                    <dt>Email:</dt>
+                    <dd id="confirmEmail">—</dd>
+                    <dt>Mailing List:</dt>
+                    <dd id="confirmMailing">—</dd>
+                </dl>
+                <a class="cta" href="buytickets.html">Buy More Tickets</a>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var params = new URLSearchParams(window.location.search);
+            var fullName = params.get('fullName');
+            var visitDate = params.get('visitDate');
+            var ticketType = params.get('ticketType');
+            var quantity = params.get('quantity');
+            var total = params.get('total');
+            var email = params.get('email');
+            var mailingList = params.get('mailingList');
+            var confirmationMessage = document.getElementById('confirmationMessage');
+
+            if (!visitDate || !ticketType || !quantity || !total || !email) {
+                confirmationMessage.textContent = 'No recent order was found. Please return to Buy Tickets to place an order.';
+                return;
+            }
+
+            document.getElementById('confirmName').textContent = fullName || '—';
+            document.getElementById('confirmDate').textContent = visitDate;
+            document.getElementById('confirmType').textContent = ticketType;
+            document.getElementById('confirmQuantity').textContent = quantity;
+            document.getElementById('confirmTotal').textContent = '$' + total;
+            document.getElementById('confirmEmail').textContent = email;
+            document.getElementById('confirmMailing').textContent = mailingList === 'Yes' ? 'Yes' : 'No';
+        });
+    </script>
+</body>
+</html>
